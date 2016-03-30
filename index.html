@@ -1,43 +1,67 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>bootstrap+js+css+html+github测试</title>
-	<link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-	<link href="./css/mystyle.css" rel="stylesheet">
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
+	<title>sui+js+css+html+github测试</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+	<link rel="stylesheet" href="./css/mystyle.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Brand</a>
-		</div>
-
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Link</a></li>
-				<li><a href="#">Link</a></li>
-			</ul>
+<div class="page-group">
+	<div class="page">
+		<header class="bar bar-nav">
+			<h1 class="title">SUI+GITHUB测试</h1>
+		</header>
+		<nav class="bar bar-tab">
+			<a class="tab-item active" href="#">
+				<span class="icon icon-home"></span>
+				<span class="tab-label">首页</span>
+			</a>
+			<a class="tab-item" href="#">
+				<span class="icon icon-me"></span>
+				<span class="tab-label">我</span>
+			</a>
+			<a class="tab-item" href="#">
+				<span class="icon icon-star"></span>
+				<span class="tab-label">收藏</span>
+			</a>
+			<a class="tab-item" href="#">
+				<span class="icon icon-settings"></span>
+				<span class="tab-label">设置</span>
+			</a>
+		</nav>
+		<div class="content">
+			<div class="swiper-container" data-space-between='10' data-autoplay="">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="./img/test.jpg"/>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="./img/test.jpg"/>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="./img/test.jpg"/>
+						</a>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
 		</div>
 	</div>
-</nav>
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="./js/myjavascript.js"></script>
+</div>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src="./js/myjavascript.js"></script>
 </body>
 </html>
