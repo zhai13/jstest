@@ -1,8 +1,1 @@
-/*!
- * javascript+github测试
- */
-$(function () {
-    'use strict';
-
-    $.init();
-});
+alert('js 加载测试');

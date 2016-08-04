@@ -1,17 +1,4 @@
 @charset "utf-8";
-/*
-css+github测试
-*/
-.swiper-container {
-    padding-bottom: 0;
-}
-.swiper-pagination {
-    bottom: 0 !important;
-}
-.swiper-container .swiper-wrapper .swiper-slide a {
-    display: block;
-}
-.swiper-container .swiper-wrapper .swiper-slide a img {
-    width: 100%;
-    max-height: 200px;
+h1 {
+    color: aquamarine;
 }
