@@ -44,3 +44,9 @@ function addLoadEvent(func) {
      }
  }
 addLoadEvent(prepareGallery);
+/*test.html*/
+//innerHTML:可以用来读写某给定元素里的HTML内容
+window.onload = function() {
+    var testdiv = document.getElementById('testdiv');
+    testdiv.innerHTML = "<p>Hallow 我是被动态写入的文本</p>"
+}
