@@ -46,7 +46,8 @@ function addLoadEvent(func) {
 addLoadEvent(prepareGallery);
 /*test.html*/
 //innerHTML:可以用来读写某给定元素里的HTML内容
-window.onload = function() {
-    var testdiv = document.getElementById('testdiv');
-    testdiv.innerHTML = "<p>Hallow 我是被动态写入的文本</p>"
-}
+var testdiv = document.getElementById('testdiv');
+var para = document.createElement("p");    //创建一个新元素
+var text = document.createTextNode("我是动态生成出来的，并且指定生成在某个位置");
+testdiv.appendChild(para);  //把创建的元素节点插入某个文档的节点数
+para.appendChild(text);
