@@ -2,11 +2,13 @@ function showPic(whichpic) {
     if (!document.getElementById('placeholder')) {
         return false;
     }
+    //var source = whichpic.href;   //HTML-DOM的写法
     var source = whichpic.getAttribute('href'); //获取元素属性
     var placeholder = document.getElementById('placeholder');   //获取元素
     if (placeholder.nodeName != "IMG") {    //判断节点是否为图片类型
         return false;
     }
+    //placeholder.src = source;   //HTML-DOM的写法
     placeholder.setAttribute('src', source);    //设置元素属性
     if (document.getElementById('description')) {
         var text = whichpic.getAttribute('title') ? whichpic.getAttribute('title') : "";    //三元表达式
