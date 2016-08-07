@@ -45,9 +45,16 @@ function addLoadEvent(func) {
  }
 addLoadEvent(prepareGallery);
 /*test.html*/
-//innerHTML:可以用来读写某给定元素里的HTML内容
-var testdiv = document.getElementById('testdiv');
-var para = document.createElement("p");    //创建一个新元素
-var text = document.createTextNode("我是动态生成出来的，并且指定生成在某个位置");
-testdiv.appendChild(para);  //把创建的元素节点插入某个文档的节点数
-para.appendChild(text);
+window.onload = function() {
+    var para = document.createElement('p');
+    var text1 = document.createTextNode('This is ');
+    para.appendChild(text1);
+    var emphasis =  document.createElement('em');
+    var text2 = document.createTextNode('my');
+    emphasis.appendChild(text2);
+    para.appendChild(emphasis);
+    var text3 = document.createTextNode(' content.');
+    para.appendChild(text3);
+    var testdiv = document.getElementById('testdiv');
+    testdiv.appendChild(para);
+}
