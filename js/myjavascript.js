@@ -1,3 +1,16 @@
+var placeholder = document.createElement('img');
+placeholder.setAttribute('id', 'placeholder');
+placeholder.setAttribute('src', 'img/placeholder.jpg');
+placeholder.setAttribute('alt', '这是一张占位的图片');
+var description = document.createElement('p');
+description.setAttribute('id', 'description');
+var desctext = document.createTextNode('这是一张占位的图片');
+description.appendChild(desctext);
+document.getElementsByTagName('body')[0].appendChild(placeholder);
+document.getElementsByTagName('body')[0].appendChild(description);
+
+
+
 function showPic(whichpic) {
     if (!document.getElementById('placeholder')) {
         return false;
@@ -45,6 +58,7 @@ function addLoadEvent(func) {
  }
 addLoadEvent(prepareGallery);
 /*test.html*/
+/*
 window.onload = function() {
     var para = document.createElement('p');
     var text1 = document.createTextNode('This is ');
@@ -57,4 +71,4 @@ window.onload = function() {
     para.appendChild(text3);
     var testdiv = document.getElementById('testdiv');
     testdiv.appendChild(para);
-}
+}*/
