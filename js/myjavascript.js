@@ -1,14 +1,3 @@
-var placeholder = document.createElement('img');
-placeholder.setAttribute('id', 'placeholder');
-placeholder.setAttribute('src', 'img/placeholder.jpg');
-placeholder.setAttribute('alt', '这是一张占位的图片');
-var description = document.createElement('p');
-description.setAttribute('id', 'description');
-var desctext = document.createTextNode('这是一张占位的图片');
-description.appendChild(desctext);
-document.getElementsByTagName('body')[0].appendChild(placeholder);
-document.getElementsByTagName('body')[0].appendChild(description);
-
 
 
 function showPic(whichpic) {
@@ -44,6 +33,31 @@ function prepareGallery() {
         }
     }
 }
+//在现有元素后插入一个新元素的函数
+function insertAfter(newElement,targetElement) {
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement) {
+        parent.appendChild(newElement);
+    } else {
+        parent.insertBefore(newElement,targetElement.nextSibling);
+    }
+}
+
+
+function preparePlaceholder() {
+    var placeholder = document.createElement('img');
+    placeholder.setAttribute('id', 'placeholder');
+    placeholder.setAttribute('src', 'img/placeholder.jpg');
+    placeholder.setAttribute('alt', '这是一张占位的图片');
+    var description = document.createElement('p');
+    description.setAttribute('id', 'description');
+    var desctext = document.createTextNode('这是一张占位的图片');
+    description.appendChild(desctext);
+    var gallery = document.getElementById('imagegallery');
+    insertAfter(placeholder,gallery);
+    insertAfter(description,placeholder);
+}
+
 //页面加载完毕后执行函数
 function addLoadEvent(func) {
      var oldonload = window.onload;
@@ -57,6 +71,7 @@ function addLoadEvent(func) {
      }
  }
 addLoadEvent(prepareGallery);
+addLoadEvent(preparePlaceholder);
 /*test.html*/
 /*
 window.onload = function() {
