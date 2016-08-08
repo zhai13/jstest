@@ -1,5 +1,56 @@
+//页面加载完毕后执行函数
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            oldonload();
+            func();
+        }
+    }
+}
 
+//在现有元素后插入一个新元素的函数
+function insertAfter(newElement,targetElement) {
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement) {
+        parent.appendChild(newElement);
+    } else {
+        parent.insertBefore(newElement,targetElement.nextSibling);
+    }
+}
 
+//动态生成占位图和占位标题文字
+function preparePlaceholder() {
+    var placeholder = document.createElement('img');
+    placeholder.setAttribute('id', 'placeholder');
+    placeholder.setAttribute('src', 'img/placeholder.jpg');
+    placeholder.setAttribute('alt', '这是一张占位的图片');
+    var description = document.createElement('p');
+    description.setAttribute('id', 'description');
+    var desctext = document.createTextNode('这是一张占位的图片');
+    description.appendChild(desctext);
+    var gallery = document.getElementById('imagegallery');
+    insertAfter(placeholder,gallery);
+    insertAfter(description,placeholder);
+}
+
+//点击链接之后切换图片和文字标题
+function prepareGallery() {
+    var imagegallery = document.getElementById('imagegallery');
+    if (!imagegallery) {
+        return false;
+    }
+    var links = imagegallery.getElementsByTagName('a');
+    for (var i=0; i<links.length; i++){
+        links[i].onclick = function() {
+            return !showPic(this);  //取消连接被点击时的默认行为
+        }
+    }
+}
+
+//点击获取图片和文字标题
 function showPic(whichpic) {
     if (!document.getElementById('placeholder')) {
         return false;
@@ -21,57 +72,11 @@ function showPic(whichpic) {
     }
     return true;
 }
-function prepareGallery() {
-    var imagegallery = document.getElementById('imagegallery');
-    if (!imagegallery) {
-        return false;
-    }
-    var links = imagegallery.getElementsByTagName('a');
-    for (var i=0; i<links.length; i++){
-        links[i].onclick = function() {
-            return !showPic(this);  //取消连接被点击时的默认行为
-        }
-    }
-}
-//在现有元素后插入一个新元素的函数
-function insertAfter(newElement,targetElement) {
-    var parent = targetElement.parentNode;
-    if (parent.lastChild == targetElement) {
-        parent.appendChild(newElement);
-    } else {
-        parent.insertBefore(newElement,targetElement.nextSibling);
-    }
-}
 
-
-function preparePlaceholder() {
-    var placeholder = document.createElement('img');
-    placeholder.setAttribute('id', 'placeholder');
-    placeholder.setAttribute('src', 'img/placeholder.jpg');
-    placeholder.setAttribute('alt', '这是一张占位的图片');
-    var description = document.createElement('p');
-    description.setAttribute('id', 'description');
-    var desctext = document.createTextNode('这是一张占位的图片');
-    description.appendChild(desctext);
-    var gallery = document.getElementById('imagegallery');
-    insertAfter(placeholder,gallery);
-    insertAfter(description,placeholder);
-}
-
-//页面加载完毕后执行函数
-function addLoadEvent(func) {
-     var oldonload = window.onload;
-     if (typeof window.onload != 'function') {
-         window.onload = func;
-     } else {
-         window.onload = function() {
-             oldonload();
-             func();
-         }
-     }
- }
+//页面加载完毕后执行下面两个函数
 addLoadEvent(prepareGallery);
 addLoadEvent(preparePlaceholder);
+
 /*test.html*/
 /*
 window.onload = function() {

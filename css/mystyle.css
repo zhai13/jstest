@@ -1,1 +1,31 @@
 @charset "utf-8";
+body {
+    width:400px;
+    margin: 10px auto;
+}
+h1 {
+    text-align: center;
+}
+.nav {
+    text-align: center;
+}
+#imagegallery {
+    list-style: none;
+    padding-left: 0;
+}
+
+#imagegallery li a {
+    text-decoration: none;
+}
+#imagegallery li a img {
+    width: 30%;
+    border-radius: .3rem;
+}
+#placeholder {
+    width:100%;
+}
+#description {
+    text-align: center;
+    color: chocolate;
+    font-weight: bold;
+}
