@@ -1,4 +1,4 @@
-//Ò³Ãæ¼ÓÔØÍê±ÏºóÖ´ĞĞº¯Êı
+//é¡µé¢åŠ è½½å®Œæ¯•åæ‰§è¡Œå‡½æ•°
 function addLoadEvent(func) {
     var oldonload = window.onload;
     if (typeof window.onload != 'function') {
@@ -11,6 +11,4 @@ function addLoadEvent(func) {
     }
 }
 
-//Ò³Ãæ¼ÓÔØÍê±ÏºóÖ´ĞĞÏÂÃæÁ½¸öº¯Êı
-addLoadEvent(getHTTPObject);
-addLoadEvent(getNewContent);
+//é¡µé¢åŠ è½½å®Œæ¯•åæ‰§è¡Œä¸‹é¢ä¸¤ä¸ªå‡½æ•°
