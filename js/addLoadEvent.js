@@ -10,5 +10,3 @@ function addLoadEvent(func) {
         }
     }
 }
-
-//页面加载完毕后执行下面两个函数
