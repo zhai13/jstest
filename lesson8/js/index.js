@@ -1,4 +1,5 @@
 function displayAbbreviations() {
+    if (!document.getElementsByTagName || !document.createElement || !document.createTextNode) return false;
     var abbreviations = document.getElementsByTagName('abbr');
     if (abbreviations.length < 1) return false;
     var defs = new Array();
@@ -27,4 +28,4 @@ function displayAbbreviations() {
     document.body.appendChild(header);  //将h2插入文档中
     document.body.appendChild(dlist);  //将dl插入文档中
 }
-displayAbbreviations(); //函数调用
+addLoadEvent(displayAbbreviations);//函数调用
