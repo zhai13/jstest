@@ -5,6 +5,7 @@ function displayAbbreviations() {
     var defs = new Array();
     for (i=0; i<abbreviations.length; i++) {
         var current_abbr = abbreviations[i];
+        if (current_abbr.childNodes.length < 1) continue;
         var definition = current_abbr.getAttribute('title');
         var key = current_abbr.lastChild.nodeValue;
         defs[key] = definition;
@@ -22,6 +23,7 @@ function displayAbbreviations() {
         dlist.appendChild(dtitle);  //将<dt></dt>插入dl中
         dlist.appendChild(ddesc);  //将<dd></dd>插入dl中
     }
+    if (dlist.childNodes.length < 1) return false;
     var header = document.createElement('h2');  //创建h2元素
     var header_text = document.createTextNode('Abbreviations'); //创建文本
     header.appendChild(header_text);    //将文本插入至<h2></h2>中
